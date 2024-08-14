@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mon Blog Professionnel</title>
     <link rel="stylesheet" href="styles.css">
+    <!-- Script reCAPTCHA -->
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
 <body>
 <!-- Section d'en-tête -->
@@ -47,13 +49,15 @@
 <!-- Section Contact -->
 <section id="contact">
     <h2>Contactez-moi</h2>
-    <form action="#" method="post">
+    <form action="https://formspree.io/f/xwpeqejr" method="POST">
         <label for="name">Nom :</label><br>
-        <input type="text" id="name" name="name"><br><br>
+        <input type="text" id="name" name="name" required><br><br>
         <label for="email">Email :</label><br>
-        <input type="email" id="email" name="email"><br><br>
+        <input type="email" id="email" name="_replyto" required><br><br>
         <label for="message">Message :</label><br>
-        <textarea id="message" name="message" rows="5"></textarea><br><br>
+        <textarea id="message" name="message" rows="5" required></textarea><br><br>
+        <!-- Widget reCAPTCHA -->
+        <div class="g-recaptcha" data-sitekey="6LeZHScqAAAAAEsgY8SSB33yFGD-G_Y4kzgOZycl"></div><br>
         <input type="submit" value="Envoyer">
     </form>
 </section>
