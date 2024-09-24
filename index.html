@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="styles.css">
     <!-- Script reCAPTCHA -->
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <!-- Link to the external captcha.js file -->
+    <script src="captcha.js" defer></script>
 </head>
 <body>
 <!-- Section d'en-tête -->
@@ -21,35 +23,10 @@
     </nav>
 </header>
 
-<!-- Section À propos -->
-<section id="about">
-    <h2>À propos de moi</h2>
-    <p>Bonjour, je suis Nicolas MOYON, un développeur web junior avec une passion pour les nouvelles technologies et le développement personnel. Ce blog est dédié à partager mes expériences professionnelles, mes découvertes technologiques, et mes projets personnels.</p>
-    <ul>
-        <li><strong>Curriculum Vitae :</strong> <a href="cv.pdf">Télécharger mon CV</a></li>
-        <li><strong>Profil LinkedIn :</strong> <a href="https://www.linkedin.com/in/nicolas-moyon-b69a8928b/" target="_blank">Voir mon LinkedIn</a></li>
-    </ul>
-</section>
-
-<!-- Section Blog -->
-<section id="blog">
-    <h2>Articles de Blog</h2>
-    <article>
-        <h3>Mon Expérience de Stage chez TechCorp</h3>
-        <p>Durant mon stage chez TechCorp, j'ai été impliqué dans le développement d'une application web innovante pour la gestion des ressources humaines. Ce fut une expérience très enrichissante qui m'a permis de mettre en pratique mes compétences en développement front-end et back-end.</p>
-        <a href="blog1.html">Lire la suite</a>
-    </article>
-    <article>
-        <h3>Apprendre le Framework React</h3>
-        <p>Récemment, j'ai décidé d'approfondir mes connaissances en développement front-end en me formant sur le framework React. Cette formation m'a permis de créer des interfaces utilisateurs dynamiques et réactives pour mes projets personnels.</p>
-        <a href="blog2.html">Lire la suite</a>
-    </article>
-</section>
-
 <!-- Section Contact -->
 <section id="contact">
     <h2>Contactez-moi</h2>
-    <form action="https://formspree.io/f/xwpeqejr" method="POST">
+    <form action="https://formspree.io/f/xwpeqejr" method="POST" onsubmit="return validateRecaptcha();">
         <label for="name">Nom :</label><br>
         <input type="text" id="name" name="name" required><br><br>
         <label for="email">Email :</label><br>
@@ -62,7 +39,7 @@
     </form>
 </section>
 
-<!-- Section Pied de page -->
+<!-- Section footer -->
 <footer>
     <p>&copy; 2024 Nicolas MOYON. Tous droits réservés.</p>
 </footer>
